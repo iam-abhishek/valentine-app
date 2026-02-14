@@ -12,7 +12,8 @@ builder.Services.AddSession();
 
 
 builder.Services.AddDbContext<LoveDbContext>(options =>
-    options.UseSqlite("Data Source=love.db"));
+    options.UseSqlite("Data Source=/tmp/love.db"));
+
 QuestPDF.Settings.License = LicenseType.Community;
 
 var app = builder.Build();
