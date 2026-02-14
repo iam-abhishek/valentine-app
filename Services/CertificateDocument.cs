@@ -1,6 +1,7 @@
 ﻿using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
+using System.IO;
 
 public class CertificateDocument : IDocument
 {
@@ -47,16 +48,12 @@ public class CertificateDocument : IDocument
                     .Column(column =>
                     {
                         column.Spacing(20);
-
-                        column.Item().AlignCenter()
-                            .Width(60)
-                            .Image("wwwroot/images/heart.jpg", ImageScaling.FitWidth);
-
-
+                                                
                         column.Item().AlignCenter().Row(row =>
                         {
                             row.AutoItem().Width(40)
-                                .Image("wwwroot/images/heart.jpg", ImageScaling.FitWidth);
+                                .Image(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/heart.jpg"), ImageScaling.FitWidth);
+
 
                             row.RelativeItem().AlignMiddle()
                                 .Text("Royal Certificate of Eternal Love")
@@ -65,11 +62,12 @@ public class CertificateDocument : IDocument
                                 .FontColor("#5B3A29");
 
                             row.AutoItem().Width(40)
-                                .Image("wwwroot/images/heart.jpg", ImageScaling.FitWidth);
+                                .Image(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/heart.jpg"), ImageScaling.FitWidth);
+                            
                         });
 
                         column.Item().AlignCenter()
-                            .Text("This hereby certifies that")
+                            .Text("This Official Certificate Proudly Certifies That\r\n")
                             .FontSize(16);
 
                         column.Item().AlignCenter()
