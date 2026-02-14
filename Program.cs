@@ -3,6 +3,7 @@ using myvapp.Data;
 using QuestPDF.Infrastructure;
 
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -31,5 +32,10 @@ app.UseRouting();
 app.UseSession();
 app.UseAuthorization();
 app.MapRazorPages();
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<LoveDbContext>();
+    db.Database.Migrate();
+}
 
 app.Run();
