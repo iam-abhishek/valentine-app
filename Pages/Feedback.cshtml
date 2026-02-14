@@ -1,0 +1,36 @@
+﻿@page
+@model FeedbackModel
+@{
+    Layout = null;
+}
+
+
+<div class="container">
+    <div class="page-wrapper">
+        <div class="card">
+            <h2>How did you like my services of love? 😄</h2>
+
+            <form method="post">
+                <div style="margin-bottom:20px;">
+                    <label>Rating (1–5)</label><br />
+                    <input type="number" asp-for="Rating" min="1" max="5"
+                           style="padding:10px; width:80px; border-radius:8px; border:1px solid #ccc;" />
+                </div>
+
+                <div style="margin-bottom:20px;">
+                    <label>Your Message</label><br />
+                    <textarea asp-for="Message"
+                              style="width:100%; padding:12px; border-radius:10px; border:1px solid #ccc;"
+                              rows="4"></textarea>
+                </div>
+
+                <div class="button-center">
+                    <button type="submit" class="btn yes">
+                        Submit ❤️
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

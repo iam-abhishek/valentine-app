@@ -1,0 +1,148 @@
+﻿/* Base setup */
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ffdee9, #b5fffc);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Page wrapper */
+.page-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modern card */
+.card {
+    background: #ffffff;
+    padding: 45px 55px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    max-width: 750px;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Headings */
+h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 25px 0;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Valentine buttons layout */
+.buttons {
+    position: relative;
+    width: 320px;
+    height: 60px;
+    margin: 20px auto 0;
+}
+
+/* Base button style */
+.btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    /* Yes button */
+    
+    .btn.yes {
+        background: #ff4d6d;
+        color: white;
+        box-shadow: 0 0 15px rgba(255, 77, 109, 0.4);
+    }
+
+
+        .btn.yes:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 77, 109, 0.4);
+        }
+
+    /* Think button */
+    .btn.think {
+        background: #adb5bd;
+        color: white;
+    }
+
+/* Centering utility */
+.button-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* Inputs modern styling */
+input, textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Floating hearts animation */
+.hearts {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+    .hearts::before {
+        content: "💖 💕 💘 💗";
+        position: fixed;
+        bottom: -50px;
+        font-size: 24px;
+        animation: floatHearts 10s linear infinite;
+    }
+
+@keyframes floatHearts {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-110vh);
+    }
+}
+.certificate-card {
+    border: 6px solid #D4AF37;
+    border-radius: 20px;
+    background: #fff8e7;
+    font-family: 'Times New Roman', serif;
+}

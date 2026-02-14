@@ -1,0 +1,68 @@
+﻿@page
+@model YesModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>She Said Yes ❤️</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <audio autoplay loop>
+        <source src="/music/vappsong.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="page-wrapper">
+        <div class="card">
+
+            <div style="display:flex; gap:40px; align-items:center;">
+
+                <div style="flex:1; text-align:left;">
+                    <h1>She said YES! ❤️</h1>
+
+                    <p>
+                        Babe, you just made this day unforgettable.
+                        And you make my life beautiful every single day.
+                    </p>
+
+                    <p>
+                        I promise to choose you —
+                        in every lifetime,
+                        in every universe,
+                        in every version of us.
+                    </p>
+
+                    <div class="button-center">
+                        <a href="/Feedback?key=ourSecretKey123" class="btn yes">
+                            Continue ❤️
+                        </a>
+                    </div>
+                </div>
+
+                <div style="flex:1; font-style:italic; color:#555;">
+                    <p>Every breath you take...</p>
+                    <p>Every move you make...</p>
+                    <p>I’ll be right here loving you ❤️</p>
+                </div>
+
+            </div>
+                      
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        confetti({
+            particleCount: 200,
+            spread: 100,
+            origin: { y: 0.6 }
+        });
+    </script>
+
+</body>
+</html>

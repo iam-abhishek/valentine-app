@@ -1,0 +1,49 @@
+﻿@page
+@model CertificateModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Our Love Certificate ❤️</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+
+    <div class="page-wrapper">
+        <div class="card certificate-card">
+
+            <h1 style="font-family:'Times New Roman', serif;">
+                Official Love Certificate 💖
+            </h1>
+
+            <p>This certifies that</p>
+
+            <h2 style="font-family:'Times New Roman', serif;">
+                She said YES!
+            </h2>
+
+            <p>On: <strong>@Model.Timestamp</strong></p>
+
+            <p>
+                I promise to keep loving you,
+                annoying you,
+                supporting you,
+                and choosing you —
+                every single day. ❤️
+            </p>
+
+            <div class="button-center">
+                <a href="/Certificate?handler=Download" class="btn yes">
+                    Download Certificate 📜
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
