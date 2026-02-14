@@ -22,7 +22,7 @@ namespace myvapp.Pages
             var response = new ValentineResponse
             {
                 Response = "Yes",
-                RespondedAt = DateTime.Now,
+                RespondedAt = DateTime.UtcNow,
                 Device = Request.Headers["User-Agent"].ToString()
             };
 
