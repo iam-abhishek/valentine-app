@@ -24,7 +24,12 @@ public class CertificateModel : PageModel
             .FirstOrDefault();
 
         if (lastResponse != null)
-            Timestamp = lastResponse.RespondedAt.ToString("dd MMM yyyy - hh:mm tt");
+        {
+            var istTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Asia/Kolkata");
+            var istTime = TimeZoneInfo.ConvertTimeFromUtc(lastResponse.RespondedAt.ToUniversalTime(), istTimeZone);
+
+            Timestamp = istTime.ToString("dd MMM yyyy - hh:mm tt");
+        }
         else
             Timestamp = "Forever ❤️";
 
