@@ -14,7 +14,7 @@ public class IndexModel : PageModel
 
     public IActionResult OnGet(string key)
     {
-        if (key == "ourSecretKey123")
+        if (key == "onlyForShreya")
         {
             HttpContext.Session.SetString("Authorized", "true");
             return Page();
