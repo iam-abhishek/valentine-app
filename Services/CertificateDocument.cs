@@ -49,14 +49,24 @@ public class CertificateDocument : IDocument
                         column.Spacing(20);
 
                         column.Item().AlignCenter()
-                            .Text("💘")
-                            .FontSize(40);
+                            .Width(60)
+                            .Image("wwwroot/images/heart.jpg", ImageScaling.FitWidth);
 
-                        column.Item().AlignCenter()
-                            .Text("Royal Certificate of Eternal Love")
-                            .FontSize(26)
-                            .Bold()
-                            .FontColor("#5B3A29");
+
+                        column.Item().AlignCenter().Row(row =>
+                        {
+                            row.AutoItem().Width(40)
+                                .Image("wwwroot/images/heart.jpg", ImageScaling.FitWidth);
+
+                            row.RelativeItem().AlignMiddle()
+                                .Text("Royal Certificate of Eternal Love")
+                                .FontSize(26)
+                                .Bold()
+                                .FontColor("#5B3A29");
+
+                            row.AutoItem().Width(40)
+                                .Image("wwwroot/images/heart.jpg", ImageScaling.FitWidth);
+                        });
 
                         column.Item().AlignCenter()
                             .Text("This hereby certifies that")
@@ -73,7 +83,7 @@ public class CertificateDocument : IDocument
                             .FontSize(16);
 
                         column.Item().AlignCenter()
-                            .Text("YES ❤️")
+                            .Text("YES")
                             .FontSize(24)
                             .Bold();
 
@@ -95,7 +105,7 @@ public class CertificateDocument : IDocument
                             .FontSize(14);
 
                         column.Item().AlignCenter()
-                            .Text("Abhishek ❤️")
+                            .Text("Abhishek")
                             .FontSize(18)
                             .Italic();
 
