@@ -110,8 +110,8 @@ public class CertificateDocument : IDocument
                         // Cupid image (kept small to avoid new page)
                         column.Item().PaddingTop(20)
                             .AlignCenter()
-                            .Width(120)
-                            .Image("wwwroot/images/cupid.jpg", ImageScaling.FitWidth);
+                            .Width(120).Image(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images/cupid.jpg"), ImageScaling.FitWidth);
+
                     });
             });
         });
