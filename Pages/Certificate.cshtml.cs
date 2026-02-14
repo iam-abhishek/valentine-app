@@ -31,23 +31,26 @@ public class CertificateModel : PageModel
         return Page();
     }
 
-    public IActionResult OnGetDownload()
+    public IActionResult OnGetDownload(string key)
     {
-        if (HttpContext.Session.GetString("Authorized") != "true")
+        if (key != "onlyForShreya")
             return Redirect("https://google.com");
 
         var lastResponse = _context.ValentineResponses
             .OrderByDescending(x => x.RespondedAt)
             .FirstOrDefault();
 
-        var timestamp = lastResponse?.RespondedAt
-            .ToString("dd MMMM yyyy - hh:mm tt") ?? "Forever ❤️";
+        var timestamp = lastResponse != null
+            ? lastResponse.RespondedAt.ToString("dd MMM yyyy - hh:mm tt")
+            : "Forever";
 
         var document = new CertificateDocument(timestamp, "Shreya");
+
         var pdf = document.GeneratePdf();
 
         return File(pdf, "application/pdf", "RoyalLoveCertificate.pdf");
     }
+
 
 
 
